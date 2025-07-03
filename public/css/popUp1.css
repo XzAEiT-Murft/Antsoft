@@ -1,0 +1,68 @@
+/* Variables de color */
+/* Definición de variables CSS para los colores del tema Anthsoft */
+:root {
+  --azul-oscuro: #042c47;        /* Fondo principal y navbar */
+  --azul-medio: #134b70;         /* Secciones y contenedores */
+  --azul-claro: #65b4e5;         /* Botones, tarjetas, detalles */
+  --blanco: #ffffff;             /* Texto principal, íconos claros */
+  --gris-claro: #e5f4fb;         /* Fondos suaves y hover */
+  --texto-principal: #f0f8ff;    /* Texto en contraste */
+  --hover-boton: #509ecc;        /* Hover para botones azules */
+}
+
+.popup {
+  display: flex;  
+  font-style: var(--blanco);
+  justify-content: center;
+  position: fixed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Vista desktop */
+@media (min-width: 1024px) {
+
+  #popupMasNos {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    z-index: auto;
+  }
+
+
+  #popupMasNosContent {
+    margin-top: 3%; 
+    background: white;
+    width: 45%;
+    height: 90%;
+    align-items: center;
+    padding: .5vh .5vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #popupMasNosContent img{
+    width: 100%;
+    height: auto;           /* Permite que la imagen crezca naturalmente */
+    display: block;
+  }
+
+  #close-popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 28.8%;
+    margin-top: 3.3%;
+    padding: 1.5vw;
+    font-size: 1.5vw;
+    background-color: var(--azul-claro);
+    color: var(--blanco);
+    border: none;
+    cursor: pointer;
+  }
+
+}
