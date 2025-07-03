@@ -1,22 +1,31 @@
+// src/app.ts
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import indexRoutes from './routes/index.routes.ts';
+import dotenv from 'dotenv';
+import router from './routes/index.routes.ts'
 
-const app = express();
+// Configurar rutas de archivos con ESM
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
-// Configurar EJS
+// Cargar variables de entorno
+dotenv.config();
+
+// Crear app de Express
+const app = express();
+
+// Configuración del motor de vistas EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Middlewares
-app.use(express.urlencoded({ extended: true }));
+// Middleware para servir archivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Middleware para parsear datos de formularios
+app.use(express.urlencoded({ extended: true }));
+
 // Rutas
-app.use('/', indexRoutes);
+app.use('/', router);
 
 export default app;
