@@ -65,4 +65,15 @@
     cursor: pointer;
   }
 
+  #popupMasNosContent::-webkit-scrollbar {
+  width: .8vw;
+  }
+
+  #popupMasNosContent::-webkit-scrollbar-thumb {
+  background-color: var(--azul-medio);
+  }
+
+  #popupMasNosContent::-webkit-scrollbar-track {
+  background-color: gray;
+  }
 }
