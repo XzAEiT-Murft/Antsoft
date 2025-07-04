@@ -1,0 +1,17 @@
+[
+  {
+    "icono": "/img/service1.png",
+    "titulo": "Diseño y desarrollo web",
+    "descripcion": "Creación de páginas web modernas, seguras y adaptadas a tus necesidades, ideal para empresas, emprendedores o portafolios personales."
+  },
+  {
+    "icono": "/img/service2.png",
+    "titulo": "Diseño UX/UI",
+    "descripcion": "Interfaz atractiva y fácil de usar con enfoque en la experiencia del visitante."
+  },
+  {
+    "icono": "/img/service3.png",
+    "titulo": "Diseño responsivo",
+    "descripcion": "Tu sitio web se verá perfecto en celulares, tabletas y computadoras."
+  }
+]

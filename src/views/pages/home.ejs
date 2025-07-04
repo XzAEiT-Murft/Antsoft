@@ -19,16 +19,15 @@
           <button class="open-popup" data-popup-target="#popupMasNos">Conoce mas sobre nosotros</button>
           <%- include('../partials/popUp1.ejs') %>
         </div>
-        <div class="Services">
+        <section class="services">
           <h1>Nuestros servicios</h1>
-          <div class="ServiceList">
-              <section>
-                <img src="/img/servicio1.png" alt="Servicio 1">
-                <h2>Diseño Web</h2>
-                <p>Diseñamos sitios web atractivos y funcionales que capturan la esencia de tu marca.</p>
-              </section>
+          <div class="service-list">
+            <% servicios.forEach(servicio => { %>
+              <%- include('../partials/serviceCard', { servicio }) %>
+            <% }) %>
           </div>
-        </div>
+          <button class="ver-mas">Ver más</button>
+        </section>
       </main>
       <script src="/js/popUp1.js"></script>
     </body>
