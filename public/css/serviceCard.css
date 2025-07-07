@@ -1,0 +1,48 @@
+/* Variables de color */
+/* Definición de variables CSS para los colores del tema Anthsoft */
+:root {
+  --azul-oscuro: #042c47;        /* Fondo principal y navbar */
+  --azul-medio: #134b70;         /* Secciones y contenedores */
+  --azul-claro: #65b4e5;         /* Botones, tarjetas, detalles */
+  --blanco: #ffffff;             /* Texto principal, íconos claros */
+  --gris-claro: #e5f4fb;         /* Fondos suaves y hover */
+  --texto-principal: #f0f8ff;    /* Texto en contraste */
+  --hover-boton: #509ecc;        /* Hover para botones azules */
+}
+
+@media (min-width: 1024px) {
+    .service-card{
+        display: flex;
+        align-items: center;    
+        justify-content: center;
+        background-color: var(--azul-claro);
+        width: 25vw;
+        height: 28vw;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transition: transform 0.2s ease;
+    }
+
+    .service-card img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .service-card h2{
+        font-size: 2vw;
+        margin-top: 1.5vw;
+        color: var(--texto-principal);
+    }
+
+    .service-card p {
+        font-size: 1.2vw;
+        color: var(--texto-principal);
+        margin-top: 3%;
+        padding: 0 1vw;
+    }
+
+    .service-card:hover {
+        transform: scale(1.03);
+    }
+}

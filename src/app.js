@@ -1,9 +1,8 @@
-// src/app.ts
 import express from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import router from './routes/index.routes.ts'
+import { fileURLToPath } from 'url';
+import router from './routes/index.routes.js';
 
 // Configurar rutas de archivos con ESM
 const __filename = fileURLToPath(import.meta.url);

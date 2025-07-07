@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="/css/mainDesktop.css" />
       <link rel="stylesheet" href="/css/NavBar.css">
       <link rel="stylesheet" href="/css/popUp1.css">
+      <link rel="stylesheet" href="/css/serviceCard.css">
       <title>Antsoft</title>
     </head>
     <body>
@@ -13,21 +14,20 @@
       <%- include('../partials/header') %>
 
       <main>
-        <div class="MainContent"> 
+        <div class="mainContent"> 
           <h2>Creamos páginas web <br> modernas, rapidas y responsivas</h2>
           <h3>Especialistas en diseño, desarrollo y despliegue web completo.</h3>
           <button class="open-popup" data-popup-target="#popupMasNos">Conoce mas sobre nosotros</button>
           <%- include('../partials/popUp1.ejs') %>
         </div>
-        <section class="services">
+        <div class="services">
           <h1>Nuestros servicios</h1>
           <div class="service-list">
             <% servicios.forEach(servicio => { %>
-              <%- include('../partials/serviceCard', { servicio }) %>
-            <% }) %>
-          </div>
+               <%- include('../partials/serviceCard', { servicio }) %>
+            <% }) %>          </div>
           <button class="ver-mas">Ver más</button>
-        </section>
+        </div>
       </main>
       <script src="/js/popUp1.js"></script>
     </body>

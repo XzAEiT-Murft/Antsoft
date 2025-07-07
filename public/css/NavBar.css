@@ -24,43 +24,43 @@
     border-bottom: .2vw solid var(--gris-claro);
   }
 
-  .Header{
+  .header{
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  #LogoContainer {
+  #logoContainer {
     margin-top: 1.3vh;
     margin-left: 3vw;
     height: 10vh;
     width: 10vw;
   }
 
-  #LogoContainer img {
+  #logoContainer img {
     width: 70%;
     height: 100%;
   }
 
-  #TitleContainer {
+  #titleContainer {
     font-size: 2vw; 
     margin-top: 3vh;
     height: min-content;
 
   }
 
-  #TitleContainer h1 {
+  #titleContainer h1 {
     margin-top: .3vh;
     font-weight: bold;
     text-align: center;
   }
 
-  #Navigation {
+  #navigation {
     margin-left: 35%;
     padding-top: 1.9vh;
   }
 
-  #Navigation button {
+  #navigation button {
     margin: 0 1.5vw; 
     border: none;
     background-color: transparent; 
