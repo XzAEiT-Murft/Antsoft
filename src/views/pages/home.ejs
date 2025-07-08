@@ -23,12 +23,16 @@
         <div class="services">
           <h1>Nuestros servicios</h1>
           <div class="service-list">
-            <% servicios.forEach(servicio => { %>
-               <%- include('../partials/serviceCard', { servicio }) %>
-            <% }) %>          </div>
+            <% servicios.slice(0, 3).forEach(servicio => { %>
+              <%- include('../partials/serviceCard', { servicio }) %>
+            <% }) %>           
+          </div>
+          <button class="services-button" id="prev-button"><</button>
+          <button class="services-button" id="next-button">></button>
           <button class="ver-mas">Ver más</button>
         </div>
       </main>
       <script src="/js/popUp1.js"></script>
+      <script src="/js/serviceCarousel.js"></script>
     </body>
   </html>

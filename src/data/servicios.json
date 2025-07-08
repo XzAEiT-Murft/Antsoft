@@ -13,5 +13,35 @@
     "icono": "/img/service3.png",
     "titulo": "Diseño responsivo",
     "descripcion": "Tu sitio web se verá perfecto en celulares, tabletas y computadoras."
+  },
+  {
+    "icono": "/img/service4.png",
+    "titulo": "Optimización SEO",
+    "descripcion": "Mejoramos la visibilidad de tu sitio en buscadores como Google para atraer más visitas orgánicas."
+  },
+  {
+    "icono": "/img/service5.png",
+    "titulo": "Integración con redes sociales",
+    "descripcion": "Conecta tu sitio web con Facebook, Instagram, WhatsApp y más para mayor alcance."
+  },
+  {
+    "icono": "/img/service6.png",
+    "titulo": "Desarrollo de tiendas en línea",
+    "descripcion": "Creamos plataformas de e-commerce seguras, funcionales y fáciles de administrar."
+  },
+  {
+    "icono": "/img/service7.png",
+    "titulo": "Mantenimiento web",
+    "descripcion": "Nos encargamos de mantener tu sitio actualizado, seguro y funcionando correctamente."
+  },
+  {
+    "icono": "/img/service8.png",
+    "titulo": "Hospedaje y dominio",
+    "descripcion": "Ofrecemos soluciones de hosting confiables y registro de dominios personalizados."
+  },
+  {
+    "icono": "/img/service9.png",
+    "titulo": "Panel de administración personalizado",
+    "descripcion": "Diseñamos interfaces de control para que gestiones el contenido de tu sitio fácilmente."
   }
 ]
