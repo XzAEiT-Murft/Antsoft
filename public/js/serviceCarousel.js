@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const prevButton = document.getElementById('prev-button');
-  const nextButton = document.getElementById('next-button');
-  const serviceList = document.getElementById('service-list-container');
+  const serviceList = document.getElementById('serviceList');
+  const prevBtn = document.getElementById('prev-button');
+  const nextBtn = document.getElementById('next-button');
 
-  // Aquí guardamos el índice de los servicios
+  // Inicializamos el índice actual y la cantidad de servicios por vista
   let currentIndex = 0;
-  const maxVisible = 3;  // Mostrar solo 3 servicios a la vez
-  const servicios = window.servicios || []; // Cargar servicios desde el servidor
+  const maxVisible = 3; // Siempre mostrar 3 servicios a la vez
 
+  // Obtener los servicios desde la variable 'servicios' que EJS pasa al cliente
+  const servicios = <%- JSON.stringify(servicios) %>; // Servicios pasados desde el backend
+
+  // Función para renderizar los servicios
   function renderServices() {
-    serviceList.innerHTML = '';
+    serviceList.innerHTML = ''; // Limpiamos la lista de servicios
 
+    // Mostrar los servicios actuales según el índice
     const visibleServices = servicios.slice(currentIndex, currentIndex + maxVisible);
     visibleServices.forEach(servicio => {
       const serviceCard = document.createElement('section');
@@ -23,24 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
       serviceList.appendChild(serviceCard);
     });
 
-    // Deshabilitar botones si no hay más servicios
-    prevButton.disabled = currentIndex === 0;
-    nextButton.disabled = currentIndex + maxVisible >= servicios.length;
+    // Deshabilitar los botones de navegación cuando no hay más servicios
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex + maxVisible >= servicios.length;
   }
 
-  prevButton.addEventListener('click', () => {
+  // Función para ir al servicio anterior
+  prevBtn.addEventListener('click', () => {
     if (currentIndex > 0) {
-      currentIndex -= maxVisible; // Retroceder 3 servicios
-      renderServices();
+      currentIndex -= maxVisible; // Retrocedemos 3 servicios
+      renderServices(); // Re-renderizamos los servicios
     }
   });
 
-  nextButton.addEventListener('click', () => {
+  // Función para ir al siguiente servicio
+  nextBtn.addEventListener('click', () => {
     if (currentIndex + maxVisible < servicios.length) {
-      currentIndex += maxVisible; // Avanzar 3 servicios
-      renderServices();
+      currentIndex += maxVisible; // Avanzamos 3 servicios
+      renderServices(); // Re-renderizamos los servicios
     }
   });
 
-  renderServices(); // Cargar los servicios iniciales
+  renderServices(); // Inicializamos el carrusel con los primeros 3 servicios
 });
