@@ -14,31 +14,32 @@ Sigan los pasos y asegúrense de tener Node.js instalado. ¡Vamos con todo! ⚙�
 npm install express ejs dotenv
 ```
 
-- `express`: Framework para servidor backend (v5).
+- `express`: Framework para servidor backend.
 - `ejs`: Motor de plantillas para vistas.
 - `dotenv`: Variables de entorno.
-
----
 
 ### 2. Dependencias de Desarrollo
 
 ```bash
-npm install -D typescript ts-node nodemon
+npm install -D nodemon
 ```
 
-- `typescript`: Base del proyecto.
-- `ts-node`: Ejecuta `.ts` sin compilar manualmente.
-- `nodemon`: Recarga automática del servidor al detectar cambios.
+> ⚠️ El proyecto ahora utiliza **JavaScript**, por lo tanto ya **no necesita TypeScript ni sus tipos**.
 
 ---
 
-### 3. Tipados para TypeScript
+### 💡 Instalación Manual (si `npm install` no funciona)
+
+Si `npm install` no instala correctamente todas las dependencias, puedes hacerlo una por una:
 
 ```bash
-npm install -D @types/express @types/ejs @types/node
+npm install express
+npm install ejs
+npm install dotenv
+npm install -D nodemon
 ```
 
-- Tipos necesarios para que TypeScript reconozca `Request`, `Response`, y APIs de Node.
+> ✅ **Nota:** Asegúrate de estar en la carpeta raíz del proyecto cuando ejecutes estos comandos.
 
 ---
 
@@ -52,14 +53,10 @@ anthsoft-site/
 │   ├── views/               # Plantillas EJS
 │   │   ├── partials/        # Encabezado, pie, navbar
 │   │   └── pages/           # Home, login, dashboard
-│   ├── routes/              # Rutas de Express (importadas en server.ts)
+│   ├── routes/              # Rutas de Express (importadas en server.js)
 │   ├── controllers/         # Lógica que manejan las rutas
-│   ├── middlewares/         # Middlewares personalizados
-│   ├── helpers/             # Funciones auxiliares (formateo, validaciones)
-│   ├── types/               # Definiciones TypeScript personalizadas
-│   └── server.ts            # Punto de entrada principal
+│   └── server.js            # Punto de entrada principal
 ├── .env                     # Variables como PUERTO o claves secretas
-├── tsconfig.json            # Configuración TS
 ├── package.json
 └── README.md                # Este archivo 😉
 ```
@@ -75,8 +72,8 @@ npm run dev
 ```
 
 Este comando:
-- Usa `ts-node` con soporte ESM
-- Ejecuta `src/server.ts`
+- Usa `nodemon` para monitorear cambios
+- Ejecuta `src/server.js`
 - Recarga en caliente al guardar cambios
 
 ---
