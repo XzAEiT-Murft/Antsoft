@@ -46,15 +46,20 @@ npm install -D nodemon
 ## 🧱 Estructura del Proyecto
 
 ```
-anthsoft-site/
+Antsoft/
 │
 ├── public/                  # Archivos estáticos (CSS, imágenes, JS)
+│   ├── css/
+│   ├── img/
+│   └── js/
 ├── src/
+│   ├── controllers/         # Lógica que manejan las rutas
+│   ├── data/                # Información utilizada por la app
 │   ├── views/               # Plantillas EJS
 │   │   ├── partials/        # Encabezado, pie, navbar
 │   │   └── pages/           # Home, login, dashboard
-│   ├── routes/              # Rutas de Express (importadas en server.js)
-│   ├── controllers/         # Lógica que manejan las rutas
+│   ├── routes/              # Rutas de Express
+│   ├── app.js               # Configuración de la aplicación Express
 │   └── server.js            # Punto de entrada principal
 ├── .env                     # Variables como PUERTO o claves secretas
 ├── package.json
@@ -83,7 +88,7 @@ Este comando:
 1. Abre la terminal y ve a la carpeta del proyecto:
 
 ```bash
-cd anthsoft-site
+cd Antsoft
 ```
 
 2. Instala todas las dependencias:
