@@ -1,52 +1,46 @@
++23
+-15
+
 document.addEventListener('DOMContentLoaded', () => {
-  const serviceList = document.getElementById('serviceList');
+  const track = document.querySelector('.service-track');
   const prevBtn = document.getElementById('prev-button');
   const nextBtn = document.getElementById('next-button');
 
-  // Inicializamos el índice actual y la cantidad de servicios por vista
+  const maxVisible = 3;
+  const total = track.children.length;
   let currentIndex = 0;
-  const maxVisible = 3; // Siempre mostrar 3 servicios a la vez
 
-  // Obtener los servicios desde la variable 'servicios' que EJS pasa al cliente
-  const servicios = <%- JSON.stringify(servicios) %>; // Servicios pasados desde el backend
-
-  // Función para renderizar los servicios
-  function renderServices() {
-    serviceList.innerHTML = ''; // Limpiamos la lista de servicios
-
-    // Mostrar los servicios actuales según el índice
-    const visibleServices = servicios.slice(currentIndex, currentIndex + maxVisible);
-    visibleServices.forEach(servicio => {
-      const serviceCard = document.createElement('section');
-      serviceCard.classList.add('service-card');
-      serviceCard.innerHTML = `
-        <img src="${servicio.icono}" alt="${servicio.titulo}" class="service-icon" />
-        <h2>${servicio.titulo}</h2>
-        <p>${servicio.descripcion}</p>
-      `;
-      serviceList.appendChild(serviceCard);
-    });
-
-    // Deshabilitar los botones de navegación cuando no hay más servicios
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex + maxVisible >= servicios.length;
+  function slideWidth() {
+    if (track.children.length > 1) {
+      return track.children[1].offsetLeft - track.children[0].offsetLeft;
+    }
+    return track.children[0].offsetWidth;
   }
 
-  // Función para ir al servicio anterior
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex -= maxVisible; // Retrocedemos 3 servicios
-      renderServices(); // Re-renderizamos los servicios
-    }
-  });
+  function update() {
+    const width = slideWidth();
+    track.style.transform = `translateX(-${currentIndex * width}px)`;
+  }
 
-  // Función para ir al siguiente servicio
   nextBtn.addEventListener('click', () => {
-    if (currentIndex + maxVisible < servicios.length) {
-      currentIndex += maxVisible; // Avanzamos 3 servicios
-      renderServices(); // Re-renderizamos los servicios
+    if (currentIndex >= total - maxVisible) {
+      currentIndex = 0;
+    } else {
+      currentIndex += 1;
     }
+    update();
   });
 
-  renderServices(); // Inicializamos el carrusel con los primeros 3 servicios
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex <= 0) {
+      currentIndex = total - maxVisible;
+    } else {
+      currentIndex -= 1;
+    }
+    update();
+  });
+
+  window.addEventListener('resize', update);
+
+  update();
 });

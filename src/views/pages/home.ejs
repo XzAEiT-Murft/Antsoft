@@ -14,27 +14,32 @@
       <%- include('../partials/header') %>
 
       <main>
-        <div class="mainContent"> 
+        
+        <section class="mainContent"> 
           <h2>Creamos páginas web <br> modernas, rapidas y responsivas</h2>
           <h3>Especialistas en diseño, desarrollo y despliegue web completo.</h3>
           <button class="open-popup" data-popup-target="#popupMasNos">Conoce mas sobre nosotros</button>
           <%- include('../partials/popUp1.ejs') %>
-        </div>
-        <div class="services">
+        </section>
+        
+        <section class="services">
           <h1>Nuestros servicios</h1>
           <div class="service-list">
-            <% servicios.slice(0, 3).forEach(servicio => { %>
-              <%- include('../partials/serviceCard', { servicio }) %>
-            <% }) %>           
+            <div class="service-track">
+              <% servicios.forEach(servicio => { %>
+                <%- include('../partials/serviceCard', { servicio }) %>
+              <% }) %>
+            </div>         
           </div>
           <button class="services-button" id="prev-button"><</button>
           <button class="services-button" id="next-button">></button>
-          <button class="ver-mas">Ver más</button>
-        </div>
+          <button class="ver-mas">Ver mas</button>
+        </section>
+        
+        <section>
+          
+        </section>
       </main>
-      <script>
-        const servicios = <%- JSON.stringify(servicios) %>; // Los servicios se pasan desde EJS al cliente
-      </script>
       <script src="/js/popUp1.js"></script>
       <script src="/js/serviceCarousel.js"></script>
     </body>

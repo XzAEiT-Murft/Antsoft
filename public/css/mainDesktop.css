@@ -80,15 +80,51 @@ body {
   }
 
   .service-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-      gap: 3vw;
-    width: 100%;
+    width: 81vw;
     height: 75%;
-    overflow-x: hidden; /* Ocultamos lo que se desborde */
+    overflow: hidden; /* Ocultamos lo que se desborde */
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
+  .service-track {
+    display: flex;
+    gap: 3vw;
+    transition: transform 0.5s ease;
+    width: max-content;
+  }
   
+  .services-button{
+    position: absolute;
+    top: 150%;
+    transform: translateY(-50%);
+    background-color: var(--gris-claro);
+    color: black;
+    border: none;
+    padding: 2vh 1.5vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 100%;
+    }
+
+  #prev-button{
+    left: 2.3vw;
+  }
+
+  #next-button{
+    right: 2.3vw;
+  }
+
+  .ver-mas{
+    color: var(--texto-principal);
+    background-color: var(--hover-boton);
+    font-size: 1vw;
+    width: 5vw;
+    height: 3.5vh;
+    margin-left: 76vw;
+    cursor: pointer;
+  }
 }
