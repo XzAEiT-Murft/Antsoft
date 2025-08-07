@@ -11,7 +11,7 @@ export const homeController = async (req, res) => {
     const data = await readFile(jsonPath, 'utf-8');
     const servicios = JSON.parse(data);
 
-    res.render('pages/home', { servicios });
+    res.render('index', { servicios });
   } catch (error) {
     console.error('Error al cargar servicios:', error);
     res.status(500).send('No se pudieron cargar los servicios.');

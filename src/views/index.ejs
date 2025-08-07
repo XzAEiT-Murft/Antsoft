@@ -11,7 +11,7 @@
     </head>
     <body>
       
-      <%- include('../partials/header') %>
+      <%- include('./partials/header') %>
 
       <main>
         
@@ -19,15 +19,20 @@
           <h2>Creamos páginas web <br> modernas, rapidas y responsivas</h2>
           <h3>Especialistas en diseño, desarrollo y despliegue web completo.</h3>
           <button class="open-popup" data-popup-target="#popupMasNos">Conoce mas sobre nosotros</button>
-          <%- include('../partials/popUp1.ejs') %>
+          <%- include('./partials/popUp1.ejs') %>
         </section>
         
         <section class="services">
           <h1>Nuestros servicios</h1>
+          <h1>Nuestros servicios</h1>
+          <h1>Nuestros servicios</h1>
+          <h1>Nuestros servicios</h1>
+          <h1>Nuestros servicios</h1>
+          <h1>Nuestros servicios</h1>
           <div class="service-list">
             <div class="service-track">
               <% servicios.forEach(servicio => { %>
-                <%- include('../partials/serviceCard', { servicio }) %>
+                <%- include('./partials/serviceCard', { servicio }) %>
               <% }) %>
             </div>         
           </div>
