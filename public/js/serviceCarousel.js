@@ -1,6 +1,3 @@
-+23
--15
-
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.service-track');
   const prevBtn = document.getElementById('prev-button');

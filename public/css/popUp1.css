@@ -31,7 +31,7 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
-    z-index: auto;
+    z-index: 2000;
   }
 
   #popupMasNosContent {
