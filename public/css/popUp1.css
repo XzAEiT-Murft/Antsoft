@@ -30,25 +30,29 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
     z-index: auto;
   }
 
 
   #popupMasNosContent {
-    margin-top: 3%; 
+    margin-top: 3%;
     background: white;
     width: 45%;
-    height: 90%;
+    max-height: 90%;
     align-items: center;
-    padding: .5vh .5vw;
-    overflow-y: auto;
-    overflow-x: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    border: 10px solid #fff;  /* borde blanco visible */
+    border-radius: 12px;
   }
 
   #popupMasNosContent img{
     width: 100%;
     height: auto;           /* Permite que la imagen crezca naturalmente */
     display: block;
+    
   }
 
   #close-popup {
@@ -63,17 +67,5 @@
     color: var(--blanco);
     border: none;
     cursor: pointer;
-  }
-
-  #popupMasNosContent::-webkit-scrollbar {
-  width: .8vw;
-  }
-
-  #popupMasNosContent::-webkit-scrollbar-thumb {
-  background-color: var(--azul-medio);
-  }
-
-  #popupMasNosContent::-webkit-scrollbar-track {
-  background-color: gray;
   }
 }

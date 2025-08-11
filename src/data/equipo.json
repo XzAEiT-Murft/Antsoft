@@ -1,0 +1,17 @@
+[
+  {
+    "foto": "/img/header1.png",
+    "nombre": "Luis Garcia Cruz",
+    "rol": "Desarrollador web full stack"
+  },
+  {
+    "foto": "/img/header2.png",
+    "nombre": "Juan Miguel Reyes Resendiz",
+    "rol": "Diseñador UI/UX"
+  },
+  {
+    "foto": "/img/header3.png",
+    "nombre": "Manuel Alejandro",
+    "rol": "La mochila"
+  }
+]

@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!targetId) return;
 
       const popup = document.querySelector(targetId);
-      if (popup) popup.classList.remove('hidden');
+      if (popup) {
+        popup.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
     });
   });
 
@@ -16,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('#close-popup').forEach(button => {
     button.addEventListener('click', () => {
       const popup = document.getElementById('popupMasNos');
-      if (popup) popup.classList.add('hidden');
+      if (popup) {
+        popup.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
     });
   });
 
@@ -26,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     popup.addEventListener('click', e => {
       if (e.target === popup) {
         popup.classList.add('hidden');
+        document.body.style.overflow = '';
       }
     });
   }
@@ -34,7 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const popup = document.getElementById('popupMasNos');
-      if (popup) popup.classList.add('hidden');
+      if (popup) {
+        popup.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
     }
   });
 });
